@@ -49,25 +49,20 @@ public class MainAluno {
             dataNascimento = LocalDate.parse(auxiliar,dtf);
             aluno4 = new Aluno(nome,rm,dataNascimento);
 
-            JOptionPane.showMessageDialog(null,String.format(
-                    "RM: %d\nNome: %s\nIdade: %s",
-                    aluno1.getRegistroMatricula(), aluno1.getNome(), aluno1.calcularIdadeCompleta()
-            ));
+            // EXIBIÇÃO FINAL (único JOptionPane)
+            String mensagem = String.format(
+                    "ALUNO 1\nRM: %d\nNome: %s\nIdade: %s\n\n" +
+                            "ALUNO 2\nRM: %d\nNome: %s\nIdade: %s\n\n" +
+                            "ALUNO 3\nRM: %d\nNome: %s\nIdade: %s\n\n" +
+                            "ALUNO 4\nRM: %d\nNome: %s\nIdade: %s",
 
-            JOptionPane.showMessageDialog(null,String.format(
-                    "RM: %d\nNome: %s\nIdade: %s",
-                    aluno2.getRegistroMatricula(), aluno2.getNome(), aluno2.calcularIdadeCompleta()
-            ));
-
-            JOptionPane.showMessageDialog(null,String.format(
-                    "RM: %d\nNome: %s\nIdade: %s",
-                    aluno3.getRegistroMatricula(), aluno3.getNome(), aluno3.calcularIdadeCompleta()
-            ));
-
-            JOptionPane.showMessageDialog(null,String.format(
-                    "RM: %d\nNome: %s\nIdade: %s",
+                    aluno1.getRegistroMatricula(), aluno1.getNome(), aluno1.calcularIdadeCompleta(),
+                    aluno2.getRegistroMatricula(), aluno2.getNome(), aluno2.calcularIdadeCompleta(),
+                    aluno3.getRegistroMatricula(), aluno3.getNome(), aluno3.calcularIdadeCompleta(),
                     aluno4.getRegistroMatricula(), aluno4.getNome(), aluno4.calcularIdadeCompleta()
-            ));
+            );
+
+            JOptionPane.showMessageDialog(null, mensagem);
 
         } catch (Exception e){
             JOptionPane.showMessageDialog(null,e.getMessage());
